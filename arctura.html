@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCTURA | Arcturian Frequency Technology for Modern Humans</title>
+<meta name="description" content="Arcturian precision. Human results. 9-minute daily alignments for sovereign clarity, unbreakable calm, and cosmic command.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --indigo:#080614;
+  --deep:#0D0A1E;
+  --mid:#13102A;
+  --violet:#6B4EFF;
+  --vlight:#9B83FF;
+  --silver:#C8C2D8;
+  --offwhite:#EDE8DE;
+  --dim:rgba(180,170,210,0.45);
+  --gold:#C4A45A;
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--indigo);color:var(--offwhite);font-family:var(--font-b);font-weight:300;overflow-x:hidden;line-height:1.7;margin:0}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:1.1rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:0.5px solid rgba(107,78,255,0.12);
+  background:rgba(8,6,20,0.88);
+  backdrop-filter:blur(14px);
+}
+.nav-logo{font-family:var(--font-d);font-size:1.3rem;font-weight:600;letter-spacing:0.28em;color:var(--offwhite);text-transform:uppercase}
+.nav-logo span{color:var(--vlight)}
+.nav-links{display:flex;gap:2.5rem;list-style:none;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--dim)}
+.nav-links a{color:inherit;text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--offwhite)}
+.nav-cta{font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.5rem 1.3rem;border:0.5px solid var(--violet);color:var(--vlight);background:transparent;cursor:pointer;transition:all 0.2s;font-family:var(--font-b)}
+.nav-cta:hover{background:var(--violet);color:#fff}
+
+/* HERO */
+#hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:8rem 2rem 5rem;overflow:hidden;background:var(--indigo);
+}
+.hero-bg-r1{position:absolute;width:1000px;height:700px;top:-100px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(88,58,220,0.2) 0%,rgba(50,25,150,0.08) 40%,transparent 70%);pointer-events:none}
+.hero-bg-r2{position:absolute;width:500px;height:500px;bottom:-60px;left:15%;background:radial-gradient(ellipse,rgba(107,78,255,0.07) 0%,transparent 65%);pointer-events:none}
+.hero-bg-r3{position:absolute;width:400px;height:400px;top:25%;right:8%;background:radial-gradient(ellipse,rgba(140,100,255,0.06) 0%,transparent 60%);pointer-events:none}
+.grid-ov{position:absolute;inset:0;background-image:linear-gradient(rgba(107,78,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(107,78,255,0.035) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 0%,transparent 75%);mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 0%,transparent 75%);pointer-events:none;z-index:1}
+canvas#starfield{position:absolute;inset:0;z-index:2;pointer-events:none}
+.particle-layer{position:absolute;inset:0;z-index:3;pointer-events:none}
+.hero-inner{position:relative;z-index:10;max-width:800px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+
+.monogram-wrap{position:relative;width:160px;height:180px;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pr{position:absolute;border-radius:50%;border:0.5px solid rgba(107,78,255,0.2);animation:pr 3.8s ease-out infinite}
+.pr:nth-child(1){width:110px;height:110px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:0s}
+.pr:nth-child(2){width:155px;height:155px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:1s}
+.pr:nth-child(3){width:200px;height:200px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:2s}
+@keyframes pr{0%{opacity:0;transform:translate(-50%,-50%) scale(0.65)}20%{opacity:0.5}100%{opacity:0;transform:translate(-50%,-50%) scale(1.15)}}
+.mono-a{position:relative;z-index:2;font-family:var(--font-d);font-size:6rem;font-weight:300;color:#D2CAEE;line-height:1;letter-spacing:-0.02em;text-shadow:0 0 40px rgba(155,131,255,0.6),0 0 100px rgba(107,78,255,0.3);animation:mfloat 5s ease-in-out infinite}
+@keyframes mfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.silhouette-wrap{position:absolute;bottom:0;left:50%;transform:translateX(-50%);z-index:1}
+.beams{position:absolute;top:-65px;left:50%;transform:translateX(-50%);width:2px;height:75px;background:linear-gradient(to top,rgba(107,78,255,0.7),transparent);animation:bpulse 3s ease-in-out infinite}
+.beams::before,.beams::after{content:'';position:absolute;width:1px;height:55px;top:12px;background:linear-gradient(to top,rgba(155,131,255,0.3),transparent)}
+.beams::before{left:-14px;transform:rotate(-18deg)}
+.beams::after{left:15px;transform:rotate(18deg)}
+@keyframes bpulse{0%,100%{opacity:0.45}50%{opacity:1}}
+
+.hero-eyebrow{font-size:0.63rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--vlight);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.eyeline{display:block;width:2.5rem;height:0.5px;background:rgba(107,78,255,0.6)}
+h1.hh1{font-family:var(--font-d);font-size:clamp(3rem,7.5vw,5.8rem);font-weight:300;line-height:1.04;color:#D5CEEA;margin-bottom:1.5rem;text-shadow:0 0 80px rgba(107,78,255,0.18)}
+h1.hh1 em{font-style:italic;color:#B8A8FF;text-shadow:0 0 50px rgba(155,131,255,0.45)}
+.hero-sub{font-size:clamp(0.92rem,2vw,1.1rem);font-weight:300;color:#A8A0C0;line-height:1.85;max-width:540px;margin:0 auto 2.8rem;letter-spacing:0.01em}
+
+.ctas{display:flex;flex-direction:column;align-items:center;gap:0.9rem;margin-bottom:2.8rem}
+.btn-p{padding:1rem 2.8rem;background:var(--violet);color:#fff;border:none;font-family:var(--font-b);font-size:0.68rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;cursor:pointer;position:relative;overflow:hidden;transition:background 0.25s}
+.btn-p::after{content:'';position:absolute;inset:0;box-shadow:0 0 0 0 rgba(107,78,255,0.7);animation:pulse-btn 2.8s ease-out infinite}
+@keyframes pulse-btn{0%{box-shadow:0 0 0 0 rgba(107,78,255,0.7)}70%{box-shadow:0 0 0 20px rgba(107,78,255,0)}100%{box-shadow:0 0 0 0 rgba(107,78,255,0)}}
+.btn-p:hover{background:#8268FF}
+.btn-g{display:flex;align-items:center;gap:0.7rem;padding:0.85rem 1.8rem;background:transparent;color:#9490B0;border:0.5px solid rgba(155,131,255,0.25);font-family:var(--font-b);font-size:0.68rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.btn-g:hover{border-color:rgba(155,131,255,0.55);color:#C0B8D8}
+.play-c{width:20px;height:20px;border:0.5px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.play-t{width:0;height:0;border-style:solid;border-width:3.5px 0 3.5px 6px;border-color:transparent transparent transparent currentColor;margin-left:1px}
+
+.trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0.4rem 1.1rem;font-size:0.62rem;letter-spacing:0.13em;text-transform:uppercase;color:rgba(155,145,185,0.45);margin-bottom:3.5rem}
+.trust strong{color:rgba(180,172,210,0.7);font-weight:400}
+.tdot{width:2px;height:2px;border-radius:50%;background:rgba(107,78,255,0.5);display:inline-block}
+
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:0.7rem;font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(155,131,255,0.45)}
+.scroll-ln{width:1px;height:2.8rem;background:linear-gradient(to bottom,rgba(107,78,255,0.8),transparent);animation:sln 2.4s ease-in-out infinite}
+@keyframes sln{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* SECTIONS */
+section{padding:7rem 3rem}
+.sec-label{font-size:0.6rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--vlight);margin-bottom:1.5rem}
+h2.dh{font-family:var(--font-d);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.1;color:var(--offwhite);margin-bottom:1.75rem}
+h2.dh em{font-style:italic;color:var(--silver)}
+.body-p{font-size:0.9rem;color:var(--silver);line-height:1.88;margin-bottom:1.1rem}
+.body-p strong{color:var(--offwhite);font-weight:400}
+.mcta{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--vlight);margin-top:0.75rem;cursor:pointer;background:none;border:none;font-family:var(--font-b);transition:gap 0.2s}
+.mcta:hover{gap:0.9rem}
+.inner{max-width:1100px;margin:0 auto}
+
+/* ORIGIN */
+#origin{background:var(--deep);border-top:0.5px solid rgba(107,78,255,0.1);border-bottom:0.5px solid rgba(107,78,255,0.1)}
+.origin-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.origin-vis{
+  aspect-ratio:3/4;max-height:500px;
+  background:radial-gradient(ellipse at 50% 35%,rgba(107,78,255,0.18) 0%,rgba(20,15,50,0.95) 60%),linear-gradient(180deg,#110D28 0%,#0A0818 100%);
+  border:0.5px solid rgba(107,78,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.helix-svg{width:120px;height:260px;position:relative;z-index:2}
+.vis-cap{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim)}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(107,78,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(107,78,255,0.06) 1px,transparent 1px);background-size:30px 30px}
+
+/* BENEFITS */
+#benefits{background:var(--indigo)}
+.ben-header{text-align:center;margin-bottom:4.5rem}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.ben-card{padding:3rem 2.5rem;border:0.5px solid rgba(107,78,255,0.13);background:rgba(19,16,42,0.5);position:relative;transition:background 0.3s}
+.ben-card:hover{background:rgba(107,78,255,0.07)}
+.ben-num{font-family:var(--font-d);font-size:4.5rem;font-weight:300;color:rgba(107,78,255,0.1);line-height:1;margin-bottom:1.5rem}
+.ben-title{font-family:var(--font-d);font-size:1.55rem;font-weight:400;color:var(--offwhite);margin-bottom:0.9rem;letter-spacing:0.04em}
+.ben-desc{font-size:0.86rem;color:var(--silver);line-height:1.82}
+.ben-icon{margin-bottom:1.2rem}
+
+/* PRODUCTS */
+#products{background:var(--deep);border-top:0.5px solid rgba(107,78,255,0.1)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.prod-card{border:0.5px solid rgba(107,78,255,0.18);background:rgba(8,6,20,0.85);padding:2.5rem 2rem;transition:all 0.3s;cursor:pointer;position:relative}
+.prod-card:hover{border-color:rgba(107,78,255,0.45);transform:translateY(-3px);background:rgba(19,16,42,0.9)}
+.prod-card.feat{border-color:rgba(107,78,255,0.4)}
+.prod-tag{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--vlight);margin-bottom:1.3rem;display:flex;align-items:center;gap:0.45rem}
+.pdot{width:3px;height:3px;border-radius:50%;background:var(--vlight);flex-shrink:0}
+.pbadge{font-size:0.55rem;letter-spacing:0.12em;background:rgba(107,78,255,0.12);color:var(--vlight);padding:0.15rem 0.5rem;border:0.5px solid rgba(107,78,255,0.3);margin-left:0.4rem}
+.prod-name{font-family:var(--font-d);font-size:1.5rem;font-weight:400;color:var(--offwhite);margin-bottom:0.4rem}
+.prod-price{font-size:0.82rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1.2rem}
+.prod-desc{font-size:0.83rem;color:var(--silver);line-height:1.78;margin-bottom:1.75rem}
+.prod-quote{font-size:0.8rem;font-style:italic;color:var(--dim);border-left:1px solid rgba(107,78,255,0.28);padding-left:0.9rem;line-height:1.7}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--indigo)}
+.test-header{text-align:center;margin-bottom:4rem}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.test-card{padding:2.5rem 2rem;border:0.5px solid rgba(200,194,216,0.09);background:rgba(19,16,42,0.35)}
+.test-stars{color:var(--gold);font-size:0.72rem;margin-bottom:1.2rem;letter-spacing:0.06em}
+.test-text{font-size:0.88rem;color:var(--silver);line-height:1.88;font-style:italic;margin-bottom:1.6rem}
+.test-author{display:flex;align-items:center;gap:0.7rem}
+.test-av{width:34px;height:34px;border-radius:50%;background:rgba(107,78,255,0.18);border:0.5px solid rgba(107,78,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.65rem;letter-spacing:0.04em;color:var(--vlight);font-weight:500;flex-shrink:0}
+.test-name{font-size:0.78rem;color:var(--offwhite);font-weight:400}
+.test-role{font-size:0.68rem;color:var(--dim)}
+
+/* DIFFERENCE */
+#difference{background:var(--deep);border-top:0.5px solid rgba(107,78,255,0.1);border-bottom:0.5px solid rgba(107,78,255,0.1)}
+.diff-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:6rem;align-items:center}
+.diff-list{list-style:none}
+.diff-list li{display:flex;align-items:flex-start;gap:0.9rem;padding:1.2rem 0;border-bottom:0.5px solid rgba(200,194,216,0.07);font-size:0.88rem;color:var(--silver);line-height:1.75}
+.diff-list li:last-child{border-bottom:none}
+.dbullet{width:4px;height:4px;border-radius:50%;background:var(--vlight);flex-shrink:0;margin-top:0.6rem}
+
+/* FINAL CTA */
+#final{
+  text-align:center;
+  background:radial-gradient(ellipse 65% 80% at 50% 50%,rgba(107,78,255,0.18) 0%,transparent 70%),var(--indigo);
+  padding:9rem 2rem;
+}
+.final-inner{max-width:680px;margin:0 auto}
+h2.fh{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.08;color:var(--offwhite);margin-bottom:1rem}
+h2.fh em{font-style:italic;color:var(--vlight);text-shadow:0 0 60px rgba(107,78,255,0.35)}
+.final-sub{font-size:0.92rem;color:var(--silver);margin-bottom:3rem}
+.btn-lg{padding:1.1rem 3.2rem;background:var(--violet);color:#fff;border:none;font-family:var(--font-b);font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;box-shadow:0 0 70px rgba(107,78,255,0.38);display:inline-block;margin-bottom:1rem}
+.btn-lg:hover{background:#8268FF;box-shadow:0 0 110px rgba(107,78,255,0.6)}
+.final-note{font-size:0.68rem;color:var(--dim);letter-spacing:0.06em}
+
+/* FOOTER */
+footer{padding:2.8rem 3rem;border-top:0.5px solid rgba(107,78,255,0.1);background:var(--indigo)}
+.foot-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.foot-logo{font-family:var(--font-d);font-size:1.1rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--silver)}
+.foot-links{display:flex;gap:2rem;list-style:none;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim)}
+.foot-links a{color:inherit;text-decoration:none;transition:color 0.2s}
+.foot-links a:hover{color:var(--silver)}
+.foot-copy{font-size:0.62rem;color:var(--dim);letter-spacing:0.06em}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links,.foot-links{display:none}
+  section{padding:5rem 1.5rem}
+  .origin-grid,.diff-grid{grid-template-columns:1fr;gap:3rem}
+  .origin-vis{aspect-ratio:16/9;max-height:260px}
+  .ben-grid,.prod-grid,.test-grid{grid-template-columns:1fr}
+  .foot-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Arc<span>tura</span></div>
+  <ul class="nav-links">
+    <li><a href="#benefits">Protocol</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="#origin">Origin</a></li>
+  </ul>
+  <button class="nav-cta">Begin Alignment</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-r1"></div>
+  <div class="hero-bg-r2"></div>
+  <div class="hero-bg-r3"></div>
+  <div class="grid-ov"></div>
+  <canvas id="starfield"></canvas>
+  <div class="particle-layer" id="ptlayer"></div>
+
+  <div class="hero-inner">
+    <div class="monogram-wrap">
+      <div class="pr"></div><div class="pr"></div><div class="pr"></div>
+      <div class="silhouette-wrap">
+        <svg width="56" height="96" viewBox="0 0 56 96" fill="none">
+          <ellipse cx="28" cy="12" rx="8" ry="9" fill="rgba(107,78,255,0.07)" stroke="rgba(155,131,255,0.22)" stroke-width="0.5"/>
+          <path d="M13 42Q13 28 28 26Q43 28 43 42L45 72Q45 75 42 75L37 75L36 96L20 96L19 75L14 75Q11 75 11 72Z" fill="rgba(107,78,255,0.06)" stroke="rgba(155,131,255,0.18)" stroke-width="0.5"/>
+          <ellipse cx="28" cy="35" rx="2.5" ry="2.5" fill="rgba(155,131,255,0.55)"/>
+          <ellipse cx="28" cy="35" rx="6" ry="6" fill="none" stroke="rgba(107,78,255,0.3)" stroke-width="0.5"/>
+          <line x1="28" y1="29" x2="28" y2="12" stroke="rgba(155,131,255,0.25)" stroke-width="0.5" stroke-dasharray="2 3"/>
+          <line x1="28" y1="8" x2="28" y2="1" stroke="rgba(155,131,255,0.45)" stroke-width="0.6"/>
+          <circle cx="28" cy="1" r="1.8" fill="rgba(155,131,255,0.6)"/>
+        </svg>
+      </div>
+      <div class="beams"></div>
+      <div class="mono-a">A</div>
+    </div>
+
+    <div class="hero-eyebrow"><span class="eyeline"></span>Arcturian frequency technology<span class="eyeline"></span></div>
+    <h1 class="hh1">Your Frequency<br><em>is Calling</em></h1>
+    <p class="hero-sub">Arcturian intelligence. Human transformation. 9-minute daily alignments for sovereign clarity, unbreakable calm, and cosmic command.</p>
+
+    <div class="ctas">
+      <button class="btn-p">Answer the Call</button>
+      <button class="btn-g"><span class="play-c"><span class="play-t"></span></span>Watch 60-second activation</button>
+    </div>
+
+    <div class="trust">
+      <strong>Trusted by 2,847 aligned humans</strong>
+      <span class="tdot"></span><span>Mindvalley</span>
+      <span class="tdot"></span><span>Gaia</span>
+      <span class="tdot"></span><span>Future of Consciousness Summit</span>
+    </div>
+
+    <div class="scroll-cue">
+      <span>Meet the Core Star Protocol</span>
+      <div class="scroll-ln"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section id="origin">
+  <div class="inner">
+    <div class="origin-grid">
+      <div>
+        <div class="sec-label">The Arcturian Origin</div>
+        <h2 class="dh">We didn't invent<br>the upgrade.<br><em>We remembered it.</em></h2>
+        <p class="body-p">Arctura channels the same 5th-dimensional intelligence that has guided humanity for millennia — now distilled into tools you can use before your first coffee.</p>
+        <p class="body-p"><strong>No patchouli. No vague affirmations.</strong> Just precise, science-meets-soul technology rooted in the red giant Arcturus — 36.7 light-years from Earth, and closer than you think.</p>
+        <button class="mcta">Meet the Core Star &nbsp;→</button>
+      </div>
+      <div class="origin-vis">
+        <div class="grid-lines"></div>
+        <svg class="helix-svg" viewBox="0 0 120 260" fill="none">
+          <line x1="60" y1="0" x2="60" y2="260" stroke="rgba(107,78,255,0.35)" stroke-width="0.8"/>
+          <ellipse cx="60" cy="26" rx="28" ry="8" stroke="rgba(155,131,255,0.3)" stroke-width="0.6" fill="none"/>
+          <ellipse cx="60" cy="78" rx="28" ry="8" stroke="rgba(155,131,255,0.25)" stroke-width="0.6" fill="none"/>
+          <ellipse cx="60" cy="130" rx="28" ry="8" stroke="rgba(155,131,255,0.3)" stroke-width="0.6" fill="none"/>
+          <ellipse cx="60" cy="182" rx="28" ry="8" stroke="rgba(155,131,255,0.25)" stroke-width="0.6" fill="none"/>
+          <ellipse cx="60" cy="234" rx="28" ry="8" stroke="rgba(155,131,255,0.2)" stroke-width="0.6" fill="none"/>
+          <circle cx="88" cy="26" r="4" fill="#9B83FF" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/></circle>
+          <circle cx="32" cy="52" r="3.5" fill="#6B4EFF" opacity="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></circle>
+          <circle cx="88" cy="78" r="4" fill="#9B83FF" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" begin="1s" repeatCount="indefinite"/></circle>
+          <circle cx="32" cy="104" r="3.5" fill="#6B4EFF" opacity="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" begin="0.3s" repeatCount="indefinite"/></circle>
+          <circle cx="88" cy="130" r="5" fill="#C0AEFF" opacity="0.9"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/></circle>
+          <circle cx="32" cy="156" r="3.5" fill="#6B4EFF" opacity="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.4s" begin="0.8s" repeatCount="indefinite"/></circle>
+          <circle cx="88" cy="182" r="4" fill="#9B83FF" opacity="0.8"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.9s" begin="0.6s" repeatCount="indefinite"/></circle>
+          <circle cx="32" cy="208" r="3" fill="#6B4EFF" opacity="0.6"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.1s" begin="1.2s" repeatCount="indefinite"/></circle>
+          <circle cx="88" cy="234" r="3.5" fill="#9B83FF" opacity="0.7"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.7s" begin="0.4s" repeatCount="indefinite"/></circle>
+        </svg>
+        <div class="vis-cap">Arcturian frequency map · 36.7 light-years</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="inner">
+    <div class="ben-header">
+      <div class="sec-label" style="text-align:center">The Daily Protocol</div>
+      <h2 class="dh" style="text-align:center;max-width:520px;margin:0 auto">Three Arcturian gifts.<br><em>One daily practice.</em></h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card">
+        <div class="ben-num">01</div>
+        <div class="ben-icon">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <polygon points="19,3 23,14 35,14 25.5,21.5 29,33 19,26 9,33 12.5,21.5 3,14 15,14" stroke="#6B4EFF" stroke-width="0.7" fill="rgba(107,78,255,0.05)"/>
+            <circle cx="19" cy="19" r="2.5" fill="#9B83FF" opacity="0.75"/>
+          </svg>
+        </div>
+        <div class="ben-title">Clarity</div>
+        <p class="ben-desc">Crystal-clear decision making. Mental static dissolves. You think like the stars — precise, expansive, sovereign.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-num">02</div>
+        <div class="ben-icon">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="14" stroke="#6B4EFF" stroke-width="0.7" fill="rgba(107,78,255,0.05)"/>
+            <circle cx="19" cy="19" r="8" stroke="#9B83FF" stroke-width="0.5" fill="rgba(155,131,255,0.06)" opacity="0.8"/>
+            <circle cx="19" cy="19" r="3" fill="#9B83FF" opacity="0.75"/>
+          </svg>
+        </div>
+        <div class="ben-title">Calm</div>
+        <p class="ben-desc">Nervous system recalibration. Chronic stress becomes background noise. Sleep like you're orbiting peace.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-num">03</div>
+        <div class="ben-icon">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <ellipse cx="19" cy="19" rx="17" ry="5.5" stroke="#6B4EFF" stroke-width="0.6" fill="none" opacity="0.55"/>
+            <ellipse cx="19" cy="19" rx="12" ry="12" stroke="#6B4EFF" stroke-width="0.4" fill="none" opacity="0.2" transform="rotate(55 19 19)"/>
+            <circle cx="19" cy="19" r="3.5" fill="#9B83FF" opacity="0.75"/>
+          </svg>
+        </div>
+        <div class="ben-title">Command</div>
+        <p class="ben-desc">Energy sovereignty. Boundaries that actually hold. You lead your life instead of reacting to it.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3.5rem">
+      <button class="btn-g" style="margin:0 auto">Experience the 9-Minute Protocol &nbsp;→</button>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="inner">
+    <div class="sec-label">Signature Offerings</div>
+    <h2 class="dh">Tools from the<br><em>Core Star</em></h2>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-tag"><span class="pdot"></span>Activation deck</div>
+        <div class="prod-name">Frequency Deck</div>
+        <div class="prod-price">$88</div>
+        <p class="prod-desc">44 activation cards + AR light-language scanner. Backed by peer-reviewed studies on coherence and decision architecture.</p>
+        <div class="prod-quote">"I pulled Card 17 and my entire nervous system exhaled." — Dr. Lena Voss, Neuroscientist</div>
+      </div>
+      <div class="prod-card feat">
+        <div class="prod-tag"><span class="pdot"></span>Bioenergetic device<span class="pbadge">Pre-order</span></div>
+        <div class="prod-name">Light Chamber</div>
+        <div class="prod-price">$497</div>
+        <p class="prod-desc">Portable PEMF + 528 Hz + Arcturian frequency blend. 9-minute sessions shown to improve HRV and reduce cortisol in our pilot cohort.</p>
+        <div class="prod-quote">"It feels like a 5D spa in my living room."</div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-tag"><span class="pdot"></span>Ritual skincare</div>
+        <div class="prod-name">Cosmic Ritual Serum</div>
+        <div class="prod-price">$128</div>
+        <p class="prod-desc">Quartz-infused adaptogenic face + energy oil. Formulated with ashwagandha, tremella, and rose quartz extract. Visible glow within 7 days, guaranteed.</p>
+        <div class="prod-quote">"My skin started glowing before I even finished the bottle."</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <button class="btn-p">Shop the Full Collection</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="inner">
+    <div class="test-header">
+      <div class="sec-label" style="text-align:center">Proof From the Field</div>
+      <h2 class="dh" style="text-align:center">They didn't just feel different.<br><em>They became unrecognizable.</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"I run a $7M tech company. This is the only 'spiritual' thing that actually improved my P&amp;L. The 9-minute morning protocol has measurably sharpened my focus."</p>
+        <div class="test-author"><div class="test-av">MK</div><div><div class="test-name">Michael K.</div><div class="test-role">CEO · Technology</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"My meditation finally has teeth. I feel Arcturian-level precision in my everyday clinical decisions. My patients have noticed the difference in my presence."</p>
+        <div class="test-author"><div class="test-av">ST</div><div><div class="test-name">Sarah T., MD</div><div class="test-role">Integrative Physician</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The app tracks my HRV like Whoop, but it also tracks my soul alignment. I've gone from scattered to completely dialed in over 90 days."</p>
+        <div class="test-author"><div class="test-av">JR</div><div><div class="test-name">Jamal R.</div><div class="test-role">Biohacker · Optimiser</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section id="difference">
+  <div class="inner">
+    <div class="diff-grid">
+      <div>
+        <div class="sec-label">The Arctura Difference</div>
+        <h2 class="dh">Why aligned humans<br><em>choose precision.</em></h2>
+        <p class="body-p" style="margin-top:1.25rem">Not every frequency technology is built the same. Arctura is engineered for results — not ritual performance.</p>
+      </div>
+      <ul class="diff-list">
+        <li><span class="dbullet"></span>Precision-engineered frequencies — not vague "vibes"</li>
+        <li><span class="dbullet"></span>Backed by 40+ peer-reviewed studies on PEMF, binaural beats, and light therapy</li>
+        <li><span class="dbullet"></span>Zero guru worship — you are the authority in your own field</li>
+        <li><span class="dbullet"></span>90-day cosmic guarantee: align or we refund + plant a tree in your name</li>
+        <li><span class="dbullet"></span>Science-meets-soul framework — not one or the other, always both</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final">
+  <div class="final-inner">
+    <div class="sec-label" style="margin-bottom:2rem">Begin Now · No Account Required</div>
+    <h2 class="fh">The stars have<br>been <em>waiting.</em><br>Your next version hasn't.</h2>
+    <p class="final-sub" style="margin-top:1.5rem">Instant access. No email required. Just 9 minutes.</p>
+    <div><button class="btn-lg">Start Free 9-Minute Alignment</button></div>
+    <p class="final-note">No subscription · No credit card · Cancel the static in under 9 minutes</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo">Arctura</div>
+    <ul class="foot-links">
+      <li><a href="#products">Shop</a></li>
+      <li><a href="#">Frequency Lab</a></li>
+      <li><a href="#">Journal</a></li>
+      <li><a href="#">Arcturian Codex</a></li>
+      <li><a href="#origin">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+    <div class="foot-copy">© 2026 ARCTURA · Not a cult, just a frequency</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cv=document.getElementById('starfield');
+  var sec=document.getElementById('hero');
+  function rsz(){
+    cv.width=sec.offsetWidth;
+    cv.height=sec.offsetHeight;
+    draw();
+  }
+  function draw(){
+    var ctx=cv.getContext('2d');
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<240;i++){
+      var x=Math.random()*cv.width,y=Math.random()*cv.height;
+      var r=Math.random()*0.85+0.15,a=Math.random()*0.55+0.1;
+      ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
+      ctx.fillStyle='rgba(210,200,240,'+a+')';ctx.fill();
+    }
+    var ac=['rgba(155,120,255,0.9)','rgba(200,175,255,0.85)','rgba(120,95,220,0.75)'];
+    for(var j=0;j<10;j++){
+      var px=Math.random()*cv.width,py=Math.random()*cv.height*0.75;
+      var pr=Math.random()*1.3+0.7;
+      ctx.beginPath();ctx.arc(px,py,pr,0,Math.PI*2);
+      ctx.fillStyle=ac[j%ac.length];ctx.fill();
+    }
+  }
+  rsz();
+  window.addEventListener('resize',rsz);
+
+  var pl=document.getElementById('ptlayer');
+  var particles=[];
+  for(var i=0;i<20;i++){
+    var d=document.createElement('div');
+    var sz=Math.random()*2.8+0.8;
+    var cr=140+Math.floor(Math.random()*80);
+    var cg=110+Math.floor(Math.random()*70);
+    var op=(0.25+Math.random()*0.55).toFixed(2);
+    d.style.cssText='position:absolute;border-radius:50%;width:'+sz+'px;height:'+sz+'px;background:rgba('+cr+','+cg+',255,'+op+');pointer-events:none';
+    pl.appendChild(d);
+    particles.push({el:d,angle:Math.random()*Math.PI*2,speed:0.0025+Math.random()*0.0035,rx:110+Math.random()*90,ry:35+Math.random()*25,yBase:-70+Math.random()*15,sz:sz});
+  }
+  function anim(){
+    var cx=sec.offsetWidth/2;
+    var cy=sec.offsetHeight*0.37;
+    for(var i=0;i<particles.length;i++){
+      var p=particles[i];
+      p.angle+=p.speed;
+      var x=cx+Math.cos(p.angle)*p.rx-p.sz/2;
+      var y=cy+p.yBase+Math.sin(p.angle)*p.ry-p.sz/2;
+      p.el.style.left=x+'px';
+      p.el.style.top=y+'px';
+      p.el.style.opacity=(0.15+Math.abs(Math.sin(p.angle))*0.65).toFixed(2);
+    }
+    requestAnimationFrame(anim);
+  }
+  anim();
+})();
+</script>
+</body>
+</html>
